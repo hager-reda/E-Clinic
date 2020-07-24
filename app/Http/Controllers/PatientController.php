@@ -10,6 +10,11 @@ use Spatie\Permission\Models\Role;
 
 class PatientController extends Controller
 {
+    public function index()
+    {
+        return view('patients.index');
+    }
+
     public function insert()
     {
         return view('patients.insert');

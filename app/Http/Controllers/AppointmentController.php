@@ -14,6 +14,12 @@ class AppointmentController extends Controller
         $appointments = Appointment::where('patient_id',$userId)->get();
         return view('appointments.index',['appointments' => $appointments]);
     }
+    public function indexDoctor()
+    {
+        $userId=auth()->user()->id; 
+        $appointments = Appointment::where('doctor_id',$userId)->get();
+        return view('appointments.index',['appointments' => $appointments]);
+    }
     public function create()
     {
         $pains = Pain::all();

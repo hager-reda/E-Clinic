@@ -16,7 +16,7 @@
       <th scope="row">{{$appointment->pain ? $appointment->pain->name : 'not exist'}}</th>
       <td>{{$appointment->date}}</td>
       <td><span class="badge badge-warning">{{$appointment->status}}</span> </td>
-      <td>Doctor</td>
+      <td></td>
     </tr>
     @endforeach
   </tbody>

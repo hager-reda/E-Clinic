@@ -11,11 +11,17 @@ use Spatie\Permission\Models\Role;
 
 class DoctorController extends Controller
 {
+    public function index()
+    {
+        return view('doctors.index');
+    }
+
     public function insert()
     { 
         $specialties = Specialty::all();
         return view('doctors.insert',['specialties' => $specialties]);
     }
+    
     public function save(StoreDoctorInfoRequest $req)
     {
         $user = User::latest()->first();
@@ -30,6 +36,6 @@ class DoctorController extends Controller
         ]);  
         $role=Role::find(2);
         $user->assignRole($role); 
-        // return redirect()->route('appointments.create');
+        return redirect()->route('doctors.index');
     }
 }
